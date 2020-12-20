@@ -3,5 +3,5 @@
 - jsonVew
 - jsonTree
 
-![jsonView](./image/jsonView.png)
+![jsonView](image/jsonView.png)
 
