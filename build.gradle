@@ -31,6 +31,6 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      发布json view 插件<br>
+      <em>提供format、escape、compress</em>功能"""
 }
