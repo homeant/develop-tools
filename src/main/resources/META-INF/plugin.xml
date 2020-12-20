@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>xin.tianhui.plugin.develop-tools</id>
+    <name>develop-tools</name>
+    <vendor email="homeanter@163.com" url="http://www.tianhui.xin">怪咖晨</vendor>
+
+    <description><![CDATA[
+    > Task :prepareKotlinBuildScriptModel UP-TO-DATE
+[gradle-intellij-plugin :develop-tools] Cannot resolve IDE sources dependency. Run with --debug option to get more log output.
+[gradle-intellij-plugin :develop-tools] Cannot read builtin registry cache. Run with --debug option to get more log output.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 27s
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <toolWindow id="JsonView" anchor="right" factoryClass="xin.tianhui.plugin.develop.tools.tool.JsonViewTool"></toolWindow>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+
+    </actions>
+
+</idea-plugin>
