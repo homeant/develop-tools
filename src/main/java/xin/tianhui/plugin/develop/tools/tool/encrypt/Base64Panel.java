@@ -1,4 +1,4 @@
-package xin.tianhui.plugin.develop.tools.tool;
+package xin.tianhui.plugin.develop.tools.tool.encrypt;
 
 import org.apache.commons.lang3.StringUtils;
 
