@@ -1,15 +1,9 @@
-package xin.tianhui.plugin.develop.tools.tool;
+package xin.tianhui.plugin.develop.tools.tool.json;
 
 import com.google.common.collect.Lists;
 import com.google.gson.*;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindow;
-import com.intellij.openapi.wm.ToolWindowFactory;
-import com.intellij.ui.content.Content;
-import com.intellij.ui.content.ContentFactory;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -17,8 +11,8 @@ import javax.swing.tree.DefaultTreeModel;
 import java.util.List;
 import java.util.Map;
 
-public class JsonViewTool implements ToolWindowFactory {
-    private JPanel rootPanel;
+public class jsonViewPanel {
+    private JPanel mainPanel;
     private JTabbedPane tabbedPane1;
     private JButton formatButton;
     private JButton escapeButton;
@@ -26,7 +20,7 @@ public class JsonViewTool implements ToolWindowFactory {
     private JTextArea jsonText;
     private JTree jsonTree;
 
-    public JsonViewTool() {
+    public jsonViewPanel() {
         jsonTree.setModel(new DefaultTreeModel(new DefaultMutableTreeNode("JSON")));
         formatButton.addActionListener((e) -> {
             String json = jsonText.getText();
@@ -114,14 +108,12 @@ public class JsonViewTool implements ToolWindowFactory {
     public void showJsonTree(String json){
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("JSON");
         List<DefaultMutableTreeNode> treeNodeList = getTreeNodeList(json);
-        treeNodeList.forEach(tree -> root.add(tree));
+        treeNodeList.forEach(root::add);
         jsonTree.setModel(new DefaultTreeModel(root));
     }
 
-    @Override
-    public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
-        ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
-        Content content = contentFactory.createContent(rootPanel, "", false);
-        toolWindow.getContentManager().addContent(content);
+
+    public JPanel getMainPanel(){
+        return this.mainPanel;
     }
 }

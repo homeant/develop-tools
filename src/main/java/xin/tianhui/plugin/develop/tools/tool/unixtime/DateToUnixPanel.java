@@ -5,14 +5,14 @@ import com.google.common.collect.Lists;
 import javax.swing.*;
 import java.util.List;
 
-public class DateToUnix {
+public class DateToUnixPanel {
     private JTextField dateText;
     private JButton convertButton;
     private JTextField unixText;
     private JComboBox dateType;
     private JPanel mainPanel;
 
-    public DateToUnix(){
+    public DateToUnixPanel(){
         dateType.addItem(new DateType("s","秒"));
         dateType.addItem(new DateType("ms","毫秒"));
     }

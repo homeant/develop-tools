@@ -19,9 +19,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <toolWindow id="JsonView" anchor="right" factoryClass="xin.tianhui.plugin.develop.tools.tool.JsonViewTool"></toolWindow>
-        <toolWindow id="Encrypt" anchor="right" factoryClass="xin.tianhui.plugin.develop.tools.tool.EncryptTool"></toolWindow>
-        <toolWindow id="UnixTime" anchor="right" factoryClass="xin.tianhui.plugin.develop.tools.tool.UnixTimeTool"></toolWindow>
+        <toolWindow id="DevelopTool" anchor="right" factoryClass="xin.tianhui.plugin.develop.tools.tool.DevelopToolWindowFactory"/>
     </extensions>
 
     <actions>

@@ -2,11 +2,12 @@ package xin.tianhui.plugin.develop.tools.tool.unixtime;
 
 import javax.swing.*;
 
-public class UnixToDate {
-    private JTextField textField1;
-    private JComboBox comboBox1;
-    private JButton convertButton;
+public class UnixTimePanel {
     private JPanel mainPanel;
+
+    public UnixTimePanel(){
+
+    }
 
     public JPanel getMainPanel() {
         return mainPanel;
