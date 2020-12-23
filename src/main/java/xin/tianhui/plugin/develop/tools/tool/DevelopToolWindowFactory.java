@@ -10,6 +10,8 @@ import xin.tianhui.plugin.develop.tools.tool.encrypt.EncryptPanelTab;
 import xin.tianhui.plugin.develop.tools.tool.json.jsonViewPanel;
 import xin.tianhui.plugin.develop.tools.tool.unixtime.UnixTimePanel;
 
+import java.awt.*;
+
 /**
  * 工具工厂
  * @author xiaobang_1118
@@ -20,6 +22,7 @@ public class DevelopToolWindowFactory implements ToolWindowFactory {
         ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
 
         JBTabbedPane toolTabs = new JBTabbedPane();
+        toolTabs.setPreferredSize(new Dimension(200,0));
         jsonViewPanel jsonViewTool = new jsonViewPanel();
         toolTabs.addTab("JSON",jsonViewTool.getMainPanel());
         EncryptPanelTab encryptTab = new EncryptPanelTab();
