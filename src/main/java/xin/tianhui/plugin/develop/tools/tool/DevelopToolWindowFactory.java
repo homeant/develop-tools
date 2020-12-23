@@ -7,7 +7,7 @@ import com.intellij.ui.components.JBTabbedPane;
 import com.intellij.ui.content.*;
 import org.jetbrains.annotations.NotNull;
 import xin.tianhui.plugin.develop.tools.tool.encrypt.EncryptPanelTab;
-import xin.tianhui.plugin.develop.tools.tool.json.jsonViewPanel;
+import xin.tianhui.plugin.develop.tools.tool.json.JsonViewPanel;
 import xin.tianhui.plugin.develop.tools.tool.unixtime.UnixTimePanel;
 
 import java.awt.*;
@@ -22,8 +22,8 @@ public class DevelopToolWindowFactory implements ToolWindowFactory {
         ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
 
         JBTabbedPane toolTabs = new JBTabbedPane();
-        toolTabs.setPreferredSize(new Dimension(200,0));
-        jsonViewPanel jsonViewTool = new jsonViewPanel();
+        toolTabs.setPreferredSize(new Dimension(500,0));
+        JsonViewPanel jsonViewTool = new JsonViewPanel();
         toolTabs.addTab("JSON",jsonViewTool.getMainPanel());
         EncryptPanelTab encryptTab = new EncryptPanelTab();
         toolTabs.addTab("Encrypt",encryptTab.getMainPanel());

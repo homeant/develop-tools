@@ -2,27 +2,31 @@ package xin.tianhui.plugin.develop.tools.tool.json;
 
 import com.google.common.collect.Lists;
 import com.google.gson.*;
+import com.intellij.openapi.ui.Messages;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import java.awt.event.*;
 import java.util.List;
 import java.util.Map;
 
-public class jsonViewPanel {
+public class JsonViewPanel {
+
     private JPanel mainPanel;
-    private JTabbedPane tabbedPane1;
+    private JTabbedPane tabPanel;
     private JButton formatButton;
     private JButton escapeButton;
     private JButton compressButton;
     private JTextArea jsonText;
     private JTree jsonTree;
 
-    public jsonViewPanel() {
+    public JsonViewPanel() {
+        initMenu();
         jsonTree.setModel(new DefaultTreeModel(new DefaultMutableTreeNode("JSON")));
-        formatButton.addActionListener((e) -> {
+        formatButton.addActionListener(e -> {
             String json = jsonText.getText();
             if (StringUtils.isNotBlank(json)) {
                 //在滚动面板中显示列表
@@ -30,20 +34,32 @@ public class jsonViewPanel {
                 showJsonTree(json);
             }
         });
-        escapeButton.addActionListener((e)->{
+        escapeButton.addActionListener(e -> {
             String json = jsonText.getText();
             if (StringUtils.isNotBlank(json)) {
                 jsonText.setText(StringEscapeUtils.unescapeJava(json));
                 showJsonTree(json);
             }
         });
-        compressButton.addActionListener((e)->{
+        compressButton.addActionListener(e -> {
             String json = jsonText.getText();
             if (StringUtils.isNotBlank(json)) {
                 jsonText.setText(compressJson(json));
                 showJsonTree(json);
             }
         });
+
+    }
+
+    private void initMenu() {
+        JPopupMenu tabMenu = new JPopupMenu();
+        JMenuItem menuItem = new JMenuItem("新建");
+        menuItem.addActionListener(e -> {
+                //Messages.showDialog("aaaaa","提示",new String[]{"OK"},0,Messages.getInformationIcon());
+
+        });
+        tabMenu.add(menuItem);
+        tabPanel.setComponentPopupMenu(tabMenu);
     }
 
     private List<DefaultMutableTreeNode> getTreeNodeList(String json) {
@@ -100,12 +116,12 @@ public class jsonViewPanel {
         return gson.toJson(jsonElement);
     }
 
-    public String compressJson(String json){
+    public String compressJson(String json) {
         JsonElement jsonElement = JsonParser.parseString(json);
         return jsonElement.toString();
     }
 
-    public void showJsonTree(String json){
+    public void showJsonTree(String json) {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("JSON");
         List<DefaultMutableTreeNode> treeNodeList = getTreeNodeList(json);
         treeNodeList.forEach(root::add);
@@ -113,7 +129,7 @@ public class jsonViewPanel {
     }
 
 
-    public JPanel getMainPanel(){
+    public JPanel getMainPanel() {
         return this.mainPanel;
     }
 }

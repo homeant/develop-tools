@@ -20,6 +20,8 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <toolWindow id="DevelopTool" anchor="right" factoryClass="xin.tianhui.plugin.develop.tools.tool.DevelopToolWindowFactory"/>
+        <applicationService serviceImplementation="xin.tianhui.plugin.develop.tools.tool.ApplicationServer"/>
+        <notificationGroup displayType="BALLOON" id="Develop Tool Notification" key="develop.tool.notification"/>
     </extensions>
 
     <actions>

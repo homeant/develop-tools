@@ -14,4 +14,9 @@ public class DateType implements Serializable {
         this.type = type;
         this.title = title;
     }
+
+    @Override
+    public String toString(){
+        return title;
+    }
 }
