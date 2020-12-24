@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,8 @@ public class JsonViewPanel {
 
     public JsonViewPanel() {
         initMenu();
+        jsonText.getParent().getParent().setMinimumSize(new Dimension(350,0));
+        jsonTree.getParent().getParent().setMinimumSize(new Dimension(350,0));
         jsonTree.setModel(new DefaultTreeModel(new DefaultMutableTreeNode("JSON")));
         formatButton.addActionListener(e -> {
             String json = jsonText.getText();

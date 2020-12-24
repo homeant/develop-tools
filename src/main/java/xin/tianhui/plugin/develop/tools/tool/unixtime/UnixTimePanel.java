@@ -1,10 +1,7 @@
 package xin.tianhui.plugin.develop.tools.tool.unixtime;
 
 import com.intellij.ui.components.JBScrollPane;
-import com.intellij.ui.layout.LayoutBuilder;
 import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.jgoodies.forms.layout.FormLayout;
 
 import javax.swing.*;
 import java.awt.*;

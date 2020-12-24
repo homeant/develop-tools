@@ -22,7 +22,7 @@ public class DevelopToolWindowFactory implements ToolWindowFactory {
         ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
 
         JBTabbedPane toolTabs = new JBTabbedPane();
-        toolTabs.setPreferredSize(new Dimension(500,0));
+        toolTabs.setMinimumSize(new Dimension(700,0));
         JsonViewPanel jsonViewTool = new JsonViewPanel();
         toolTabs.addTab("JSON",jsonViewTool.getMainPanel());
         EncryptPanelTab encryptTab = new EncryptPanelTab();

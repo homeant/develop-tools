@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.*;
+import xin.tianhui.plugin.develop.tools.utils.NotificationUtils;
 
 import javax.swing.*;
 
@@ -37,9 +38,7 @@ public class DateToUnixPanel {
 
                 }
             } catch (Exception ex) {
-                NotificationGroup notificationGroup = NotificationGroupManager.getInstance().getNotificationGroup("Develop Tool Notification");
-                Notification notification = notificationGroup.createNotification("提示", "时间转换错误", NotificationType.ERROR, null);
-                Notifications.Bus.notify(notification);
+                NotificationUtils.notification("提示", "时间转换错误", NotificationType.ERROR);
                 throw ex;
             }
         });
