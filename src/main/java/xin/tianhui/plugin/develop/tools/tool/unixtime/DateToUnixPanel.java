@@ -5,9 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.*;
-import xin.tianhui.plugin.develop.tools.utils.NotificationUtils;
 
 import javax.swing.*;
+import java.awt.*;
 
 @Slf4j
 public class DateToUnixPanel {
@@ -23,6 +23,10 @@ public class DateToUnixPanel {
         dateType.addItem(new DateType("s", "秒"));
         dateType.addItem(new DateType("ms", "毫秒"));
 
+        dateText.setMinimumSize(new Dimension(156,0));
+        unixText.setMinimumSize(new Dimension(156,0));
+        dateType.setMaximumSize(new Dimension(50,0));
+        convertButton.setMaximumSize(new Dimension(110,0));
         convertButton.addActionListener(e -> {
             try {
                 String date = dateText.getText();
@@ -38,7 +42,7 @@ public class DateToUnixPanel {
 
                 }
             } catch (Exception ex) {
-                NotificationUtils.notification("提示", "时间转换错误", NotificationType.ERROR);
+                //NotificationUtils.notification("提示", "时间转换错误", NotificationType.ERROR);
                 throw ex;
             }
         });

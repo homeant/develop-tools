@@ -4,14 +4,17 @@
     <vendor email="homeanter@163.com" url="http://www.tianhui.xin">怪咖晨</vendor>
 
     <description><![CDATA[
-        develop tools
-        <ul>
-        <li>
-            json view</br>
-            <em>format</em>、<em>escape</em>、<em>compress</em>
-        </li>
-        </ul>
+         <html>
+            <p>
+                A IntelliJ Idea plug-in that provides JSON Format, data encryption and decryption, and timestamp conversion tools
+            </p>
+         </html>
     ]]></description>
+
+    <change-notes><![CDATA[
+        plug-in release develop tools<br>
+        <em>JSON Format、data encryption and decryption、timestamp conversion are provided</em>
+    ]]></change-notes>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
@@ -20,8 +23,6 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <toolWindow id="DevelopTool" anchor="right" factoryClass="xin.tianhui.plugin.develop.tools.tool.DevelopToolWindowFactory"/>
-        <applicationService serviceImplementation="xin.tianhui.plugin.develop.tools.tool.ApplicationServer"/>
-        <notificationGroup displayType="BALLOON" id="Develop Tool Notification" key="develop.tool.notification"/>
     </extensions>
 
     <actions>
