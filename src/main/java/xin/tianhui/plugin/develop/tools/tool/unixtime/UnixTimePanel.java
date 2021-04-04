@@ -6,12 +6,12 @@ import java.awt.*;
 public class UnixTimePanel {
     private JPanel mainPanel;
 
-    public UnixTimePanel(){
-        mainPanel.setLayout(new GridLayout(2,1));
-        DateToUnixPanel dateToUnixPanel = new DateToUnixPanel();
-        UnixToDatePanel unixToDatePanel = new UnixToDatePanel();
-        mainPanel.add(unixToDatePanel.getMainPanel());
-        mainPanel.add(dateToUnixPanel.getMainPanel());
+    public UnixTimePanel() {
+        mainPanel.setLayout(new FlowLayout());
+        JPanel dataToUnixPanel = new DateToUnixPanel().getMainPanel();
+        JPanel unixToDatePanel = new UnixToDatePanel().getMainPanel();
+        this.mainPanel.add(unixToDatePanel);
+        this.mainPanel.add(dataToUnixPanel);
     }
 
     public JPanel getMainPanel() {

@@ -2,11 +2,15 @@ package xin.tianhui.plugin.develop.tools.tool.json;
 
 import com.google.common.collect.Lists;
 import com.google.gson.*;
+import com.intellij.json.json5.highlighting.Json5SyntaxHighlightingFactory;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.ui.JBColor;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
+import javax.swing.text.DefaultHighlighter;
+import javax.swing.text.Highlighter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
@@ -29,6 +33,8 @@ public class JsonViewPanel {
         jsonText.getParent().getParent().setMinimumSize(new Dimension(350,0));
         jsonTree.getParent().getParent().setMinimumSize(new Dimension(350,0));
         jsonTree.setModel(new DefaultTreeModel(new DefaultMutableTreeNode("JSON")));
+        Highlighter hilit = new DefaultHighlighter();
+        jsonText.setHighlighter(hilit);
         formatButton.addActionListener(e -> {
             String json = jsonText.getText();
             if (StringUtils.isNotBlank(json)) {

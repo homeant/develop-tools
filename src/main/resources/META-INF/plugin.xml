@@ -23,7 +23,6 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <toolWindow id="DevelopTool" anchor="right" factoryClass="xin.tianhui.plugin.develop.tools.tool.DevelopToolWindowFactory"/>
-        <toolWindow id="YSql" anchor="bottom" factoryClass="xin.tianhui.plugin.develop.ysql.TableWindowFactory"/>
     </extensions>
 
     <actions>
