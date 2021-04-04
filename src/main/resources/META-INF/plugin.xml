@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>xin.tianhui.plugin.develop-tools</id>
     <name>develop-tools</name>
-    <vendor email="homeanter@163.com" url="http://www.tianhui.xin">怪咖晨</vendor>
+    <vendor email="homeanter@163.com" url="https://github.com/homeant/develop-tools">怪咖晨</vendor>
 
     <description><![CDATA[
          <html>
